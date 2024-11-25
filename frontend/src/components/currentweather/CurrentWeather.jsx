@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import sunnyWeather from '../../assets/sunny.png'
+import cloudyWeather from '../../assets/cloudy.png'
 import styles from './currentWeather.module.css'
 
 const weatherInfo = [
@@ -21,7 +22,7 @@ const weatherInfo = [
     city: 'Brooklyn',
     state: 'NY',
     temp: 54,
-    weatherDesc: 'Sunny',
+    weatherDesc: 'Cloudy',
     sunrise: '6:10',
     sunset: '5:32',
     uvindex: 4,
@@ -29,7 +30,7 @@ const weatherInfo = [
     lowTemp: 48,
     highTemp: 57,
     feelsLike: 50,
-    weatherImg: sunnyWeather,
+    weatherImg: cloudyWeather,
   },
 ]
 
