@@ -1,0 +1,61 @@
+.currentWeatherContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.302); /* Semi-transparent white */
+    backdrop-filter: blur(5px); /* Apply the blur effect */
+    border-radius: 0 0 15px 15px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.searchBar input {
+    width: 60vw;
+    margin: 30px 0 10px 0;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    background-color: #00AEFF;
+    outline: none;
+    border: 1px solid #FFF;
+    color: #EFEDED;
+}
+
+.searchBar input::placeholder {
+    color: #EFEDED;
+    text-align: center;
+}
+
+.currentWeather {
+    margin-top: 20px;
+    padding: 15px;
+    width: 100%;
+    max-width: 800px; 
+}
+
+.currentWeather img {
+    width: 150px;
+    height: auto;
+    margin: 40px 0 0px 0;
+}
+
+.currentWeather h1 {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.currentWeather h2 {
+    font-size: 1.9rem;
+    margin-bottom: 100px;
+    font-weight: 200;
+}
+
+.currentWeather .currentTemp {
+    font-size: 6rem;
+    font-weight: 200;
+}
+.currentWeather p {
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
