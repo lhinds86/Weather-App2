@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import sunnyWeather from '../../assets/sunny.png'
-import cloudyWeather from '../../assets/cloudy.png'
+import sunnyWeather from '../../assets/sunny.png' // Test data images
+import cloudyWeather from '../../assets/cloudy.png' // Test data images 
 import styles from './currentWeather.module.css'
 
 const weatherInfo = [
@@ -36,16 +36,22 @@ const weatherInfo = [
 
 export default function CurrentWeather() {
   const [searchItem, setSearchItem] = useState('')
+  const [currentWeather, setCurrentWeather] = useState(weatherInfo[0]); 
 
   const handleInputChange = (e) => {
     setSearchItem(e.target.value)
   }
 
-  // Find the city matching the search input
-  const currentWeather = weatherInfo.find(
-    (weather) =>
-      weather.city.toLowerCase() === searchItem.toLowerCase()
-  ) || weatherInfo[0]; // Default to the first city if no match
+  const handleSearch = (e) => {
+    if (e.key === 'Enter') {
+      const matchedWeather =
+        weatherInfo.find(
+          (weather) =>
+            weather.city.toLowerCase() === searchItem.toLowerCase()
+        ) || weatherInfo[0]; 
+      setCurrentWeather(matchedWeather);
+    }
+  }
 
   return (
     <div className={styles.currentWeatherContainer}>
@@ -54,6 +60,7 @@ export default function CurrentWeather() {
           type="text"
           value={searchItem}
           onChange={handleInputChange}
+          onKeyDown={handleSearch}
           placeholder="Location"
         />
       </div>
