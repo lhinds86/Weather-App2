@@ -61,7 +61,6 @@
 
 .feelsLike {
     align-content: end;
-
 }
 
 .currentWeather .feelsLike {
@@ -73,6 +72,7 @@
     font-size: 8rem;
     font-weight: 100;
 }
+
 .currentWeather p {
     font-size: 1.2rem;
     margin: 5px 0;
