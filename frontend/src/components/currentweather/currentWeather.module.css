@@ -70,8 +70,8 @@
 }
 
 .currentWeather .currentTemp {
-    font-size: 10rem;
-    font-weight: 200;
+    font-size: 8rem;
+    font-weight: 100;
 }
 .currentWeather p {
     font-size: 1.2rem;
