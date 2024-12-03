@@ -1,4 +1,9 @@
 import { useState } from 'react'
+
+import rainImg from '../../assets/rain.png'
+import sunriseImg from '../../assets/sunrise.png'
+import sunsetImg from '../../assets/sunset.png'
+import uvImg from '../../assets/uv.png'
 import sunnyWeather from '../../assets/sunny.png' // Test data images
 import cloudyWeather from '../../assets/cloudy.png' // Test data images 
 import styles from './currentWeather.module.css'
@@ -54,33 +59,68 @@ export default function CurrentWeather() {
   }
 
   return (
-    <div className={styles.currentWeatherContainer}>
-      <div className={styles.searchBar}>
-        <input
-          type="text"
-          value={searchItem}
-          onChange={handleInputChange}
-          onKeyDown={handleSearch}
-          placeholder="Location"
-        />
-      </div>
-
-      <div className={styles.currentWeather}>
-        <h1>{currentWeather.city}, {currentWeather.state}</h1>
-
-        <img
-          src={currentWeather.weatherImg}
-          alt={`${currentWeather.weatherDesc} weather icon`}
-        />
-
-        <h2>{currentWeather.weatherDesc}</h2>
-        <div className={styles.tempDisplay}>
-          <p className={styles.currentTemp}>{currentWeather.temp}°F</p>
-          <p className={styles.feelsLike}>Feels Like: {currentWeather.feelsLike}°F</p>
+    <>
+      <div className={styles.currentWeatherContainer}>
+        {/* Search Input */}
+        <div className={styles.searchBar}>
+          <input
+            type="text"
+            value={searchItem}
+            onChange={handleInputChange}
+            onKeyDown={handleSearch}
+            placeholder="Location"
+          />
         </div>
 
-        {/* <hr /> */}
+        <div className={styles.currentWeather}>
+          {/* Current City */}
+          <h1>{currentWeather.city}, {currentWeather.state}</h1>
+          {/* Current Weather Icon */}
+          <img
+            src={currentWeather.weatherImg}
+            alt={`${currentWeather.weatherDesc} weather icon`}
+          />
+          {/* Current Temp Display */}
+          <h2>{currentWeather.weatherDesc}</h2>
+          <div className={styles.tempDisplay}>
+            <p className={styles.currentTemp}>{currentWeather.temp}°F</p>
+            <p className={styles.feelsLike}>Feels Like: {currentWeather.feelsLike}°F</p>
+          </div>
+        </div>
       </div>
-    </div>
+
+      {/* CURRENT WEATHER DETAILS */}
+
+      <div className={styles.weatherDetailsContainer}>
+            <div>
+              {/* Sunrise and Sunset */}
+              <div className={styles.sun}>
+                <div className={styles.sunrise}>
+                  <img src={sunriseImg} alt='Sunrise image' />
+                  <p>{currentWeather.sunrise}</p>
+                </div>
+                <div className={styles.sunrise}>
+                  <img src={sunsetImg} alt='Sunset image' />
+                  <p>{currentWeather.sunset}</p>
+                </div>
+              </div>
+              {/* UV Index */}
+              <div className={styles.uvIndex}>
+                <img src={uvImg} alt='UV Index image' />
+                <p>{currentWeather.uvindex}</p>
+              </div>
+              {/* Chance of rain */}
+              <div className={styles.rain}>
+                <img src={rainImg} alt='Rain drop image' />
+                <p>{currentWeather.rain}%</p>
+              </div>
+              {/* High and Low Temps */}
+              <div className={styles.highsLows}>
+                <p className={styles.highTemp}>H : {currentWeather.highTemp}</p>
+                <p className={styles.lowTemp}>L : {currentWeather.lowTemp}</p>
+              </div>
+            </div>
+          </div>
+    </>
   )
 }

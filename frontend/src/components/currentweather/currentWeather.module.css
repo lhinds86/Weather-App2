@@ -36,9 +36,9 @@
 }
 
 .currentWeather img {
-    width: 150px;
+    width: 120px;
     height: auto;
-    margin: 40px 0 0px 0;
+    margin: 20px 0 0px 0;
 }
 
 .currentWeather h1 {
@@ -64,12 +64,13 @@
 }
 
 .currentWeather .feelsLike {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+    font-weight: 200;
     /* margin: 0 0 25px 20px; */
 }
 
 .currentWeather .currentTemp {
-    font-size: 8rem;
+    font-size: 5rem;
     font-weight: 100;
 }
 
@@ -77,3 +78,17 @@
     font-size: 1.2rem;
     margin: 5px 0;
 }
+
+/* Weather Details */
+
+.weatherDetailsContainer {
+    display: flex;
+}
+.weatherDetailsContainer img {
+    width: 40px;
+}
+
+.sun {
+    
+}
+
